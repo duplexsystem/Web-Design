@@ -1,0 +1,20 @@
+.card-fitpage {
+  width: 700px;
+}
+.google-sans {
+    font-family: 'googlesans';
+    src: url('Product Sans Regular.ttf');
+}
+.colorsmain {
+  background-color: #1A181B;
+  color: #700548;
+}
+.colorsheader {
+  background-color: #700548;
+  color: #1A181B;
+}
+.colorscard {
+  background-color: #161925;
+  color: #23395B;
+  text-color: #7272AB;
+}

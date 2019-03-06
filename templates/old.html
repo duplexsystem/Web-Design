@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html  class="colorsmain"><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  <meta name="author" content="Bud Gidiere">
+  <meta name="description" content="This is a cool web site with some things">
+  <meta name="keywords" content="cool,things">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css">
+  <!-- Load Custom CSS Style Sheet -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Adding Some icons -->
+  <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+  <!-- Google Sans Font -->
+  <link rel="stylesheet" href="/css/sans.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body  onload="loadSite()">
+    <head>
+      <nav>
+        <div class="nav-wrapper colorsheader">
+          <a href="#!" class="brand-logo"><i class="mdi mdi-atom mdi-36px"></i>Atom-Gram</a>
+          <ul class="right hide-on-med-and-down">
+          </ul>
+        </div>
+      </nav>
+    </head>
+    <h3 id="welcome" class="center-align"></h3>
+            <form id="form1">
+                <div class="input-field">
+                    <input type="text" id="inputbox">
+                    <label class="active" for="name">Name</label>
+                </div>
+                <button class="btn" name="button" onclick="submitForm(this.form)">
+                    <i class="large material-icons">send</i>
+                </button>
+            </form>
+            <script>
+                function loadSite() {
+                    if (document.cookie.length > -1) {
+                        document.getElementById("welcome").innerHTML = "Welcome " + document.cookie + "!!!";
+                    } else {
+                        document.getElementById("welcome").innerHTML = "";
+                    }
+                }
+                function submitForm(form) {
+                    var name = form.inputbox.value;
+                    document.cookie = name;
+                    document.getElementById("welcome").innerHTML = "Welcome " + name + "!!!";
+                }
+            </script>
+            <!--Import jQuery before materialize.js-->
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+            <script>
+                $(".button-collapse").sideNav();
+            </script>
+    <div class="row card-fitpage center-align" style="width:500px">
+      <div>
+        <div class="card colorscard">
+          <div class="card-image">
+            <img src="https://images.fireside.fm/podcasts/images/b/bc7f1faf-8aad-4135-bb12-83a8af679756/cover_small.jpg" style="width:500px; height:500px">
+            <span class="card-title"></span>
+            <a class="btn-floating halfway-fab waves-effect waves-light" style="background-color:#700548"><i class="mdi mdi-account"></i>  <!-- bell --></a>
+          </div>
+          <div class="card-content colorscard">
+            <p>My Favroite Place to Vacaion is my room because playing on my computer is fun! <br> My Favorite Sports Team <br> My Favorite Sports Team is {null} Because i dont watch sports <br> My Favroite Video Game <br> My Favroite Video Game is Fallout 4 because it is fun <br> My Favroite thing about Birmingham</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- <h1>Hi this is my site</h1>
+      <h2>My Favorite Place to Vacaion</h4>
+      <h4>My Favroite Place to Vacaion is my room because playing on my computer is fun!</h4>
+      <h2>My Favorite Sports Team</h2>
+      <h4>My Favorite Sports Team is {null} Because i dont watch sports.</h4>
+      <h2>My Favroite Video Game</h2>
+      <h4>My Favroite Video Game is Fallout 4 because it is fun</h4>
+      <h2>My Favroite thing about Birmingham</h2>
+      <h5>{null}</h5>
+      <! -->
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

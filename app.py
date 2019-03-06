@@ -36,8 +36,10 @@ def posts():
     return render_template('posts.html', **locals())
 @app.errorhandler(404)
 def page_not_found(e):
-    pass
-    return render_template('404.html'), 404
+    return render_template('404.html'),
+@app.route("/base", methods=['GET'])
+def base():
+    return render_template('base.html')
 @app.route("/post", methods=['GET', 'POST'])
 def post():
     form = PostForm()
