@@ -1,0 +1,7 @@
+flake8>=2.5.0
+flask>=1.0.2
+flask-Bootstrap>=3.3.7.1
+flask-SQLAlchemy>=2.3
+wtforms>=2.2.1
+flask-wtf>=0.14
+datetime>=0

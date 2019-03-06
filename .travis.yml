@@ -1,0 +1,33 @@
+language: python
+python:
+- '3.7', '3.6'
+notifications:
+  email:
+    recipients:
+      - sgidiere@gmail.com
+      - bgidiere@altamontschool.org
+    on_success: never # default: change
+    on_failure: always # default: always
+sudo: enabled
+install: sudo pip3 install -r assets/requirements.txt
+script:
+  - python -m py_compile assistant.py
+  - python -m flake8 
+before_deploy:
+  - zip -r webwdb.zip app.py assets database.db LICENSE.md
+  - zip -r web.zip app.py assets LICENSE.md
+deploy:
+  provider: releases
+  api_key:
+    secure: ok9BrQOk3cxrOwxLh27ISFzuiiPXKM50ub0emC3xGjGH6sD+IUZLkWUIG3PR+S4XUYJNEY6VWL9JLs73uMroccSbmukIZ0N2gLw5piicXb4ukWELJfeGKQ4AmYNJCloR6Zwy+fJgPZnrkrniG4KeHRiQyG0yJz8RQj4tlxaGeIyZlVfTS+ZQ2p7p1Sa3FIMx3RzbdmgV87VSqggCQODzC9nHMmaEsMRRiWmW+ULF92v4FWs2RUcDtjVQICxnZm2Ov3vfP6yGKzzqsmpyQ70Blj7X1KpKre5zvxKNEuWLVeh5G74bUr1bsZLjaTqLKeDj8EvtJlv0gk7w6uXe+EFctQtAkjlg1T8dFMJ4bf6IobuV6emhaEvpf+9zq2v8libGzleBlyUnv8t3ybRWAxkGkjToxMaUxF/VWE+AeRZ6+q9j4TM5zbEZDUPy6WJcPG9P3qUHXVR7LdaJksPfrIUUR945Dp68sWqbkRx0hLDpqVuGJxdJRhEPCkviMe60JRTD1hfQ8PaWyoncAV8T7uVpYgc3m/gnuQpHfFkFh4mXy/gkWGv4YIT2dhQkDr4objIZBbxD/PIICERd3Hg5fn9kh8dozegr/773FHGE7ykot2dpSWCL1//sLZfv1cdF2kfz8WRIXuUa+Y3gR4DJeT1yfEDHuSaseyUu7lWaAyBYMUM=
+  file:
+    - web.zip
+    - webwdb.zip
+  skip_cleanup: true
+  name: "Website PUSH"
+  body: "This will be auto dwonloaded by website"
+  prerelease: true
+  on:
+    repo: budgidiere/Web-Design
+    all_branches: true
+    tags: false
